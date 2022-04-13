@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE HTML>
+<!--
+	Strongly Typed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Django Cheat Sheet - home</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="{% static 'home/assets/open-iconic/font/css/open-iconic-bootstrap.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'home/assets/css/main.css' %}" />
+	
+    {% block 'other_styles' %}{% endblock %}
+  </head>
+	<body class="homepage is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+      <section id="header">
+        <div class="container">
+
+          <!-- Logo -->
+          {% block 'logo' %}{% endblock %}
+
+          <!-- Nav -->
+          <nav id="nav">
+              <ul>
+                <li><a class="icon solid fa-home" href="{% url 'home' %}"><span>Home</span></a></li>
+                <!--<li>
+                  <a href="#" class="icon fa-chart-bar"><span>Dropdown</span></a>
+                  <ul>
+                    <li><a href="#">Lorem ipsum dolor</a></li>
+                    <li><a href="#">Magna phasellus</a></li>
+                    <li><a href="#">Etiam dolore nisl</a></li>
+                    <li>
+                      <a href="#">Phasellus consequat</a>
+                      <ul>
+                        <li><a href="#">Magna phasellus</a></li>
+                        <li><a href="#">Etiam dolore nisl</a></li>
+                        <li><a href="#">Phasellus consequat</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#">Veroeros feugiat</a></li>
+                  </ul>
+                </li>
+                <li><a class="icon solid fa-cog" href="left-sidebar.html"><span>Left Sidebar</span></a></li>
+                <li><a class="icon solid fa-retweet" href="right-sidebar.html"><span>Right Sidebar</span></a></li>
+                <li><a class="icon solid fa-sitemap" href="no-sidebar.html"><span>No Sidebar</span></a></li>-->
+              </ul>
+            </nav>
+
+        </div>
+      </section>
+
+      {% block 'main' %}
+      {% endblock %}
+
+			<!-- Footer -->
+      <section id="footer">
+        <div id="copyright" class="container">
+          <ul class="links">
+            <li>&copy; Cruvinel. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+          </ul>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="{% static 'home/assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'home/assets/js/jquery.dropotron.min.js' %}"></script>
+    <script src="{% static 'home/assets/js/browser.min.js' %}"></script>
+    <script src="{% static 'home/assets/js/breakpoints.min.js' %}"></script>
+    <script src="{% static 'home/assets/js/util.js' %}"></script>
+    <script src="{% static 'home/assets/js/main.js' %}"></script>
+
+  </body>
+</html>
+  
