@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block 'logo' %}
-	<h1 id="logo"><a href="{% url 'home' %}">Frases para momentos</a></h1>
+	<h1 id="logo"><a href="{% url 'home:index' %}">Frases para momentos</a></h1>
 {% endblock %}
 
 {% block 'main' %}
@@ -31,8 +31,8 @@
             <h3>Por {{quote.thinker}}</h3>
             <p>{{quote.text}}</p>
             <div class="modal-btns-container">
-            <button type="button" data-toggle="modal" data-target="#modal-quote-edit-{{quote.id}}" class="edit-btn-icon"><span class="oi oi-pencil" title="pencil" aria-hidden="true"></span></button>
-            <button type="button" data-toggle="modal" data-target="#modal-quote-delete-{{quote.id}}" class="delete-btn-icon"><span class="oi oi-x" title="x" aria-hidden="true"></span></button>
+              <button type="button" data-toggle="modal" data-target="#modal-quote-edit-{{quote.id}}" class="edit-btn-icon"><span class="oi oi-pencil" title="pencil" aria-hidden="true"></span></button>
+              <button type="button" data-toggle="modal" data-target="#modal-quote-delete-{{quote.id}}" class="delete-btn-icon"><span class="oi oi-x" title="x" aria-hidden="true"></span></button>
             </div>
           </article>
 

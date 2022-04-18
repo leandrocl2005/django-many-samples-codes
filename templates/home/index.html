@@ -1,8 +1,10 @@
-{% extends 'base.html' %}
+{% extends '../base.html' %}
 {% load static %}
 
+{% block 'title' %}<title>Homepage</title>{% endblock %}
+
 {% block 'logo' %}
-	<h1 id="logo"><a href="{% url 'home' %}">Django Cheat Sheet</a></h1>
+	<h1 id="logo"><a href="{% url 'home:index' %}">Django Cheat Sheet</a></h1>
 	<p>Um acervo de exemplos de códigos para Django.</p>
 {% endblock %}
 
