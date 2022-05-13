@@ -39,8 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # my apps
     'home.apps.HomeConfig',
-    'quotescrud.apps.QuotescrudConfig'
+    'quotescrud.apps.QuotescrudConfig',
+    'users_hub.apps.UsersHubConfig',
+    # third party apps
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -107,7 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
 TIME_ZONE = 'UTC'
 
@@ -123,6 +127,9 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'templates/static'),)
 STATIC_ROOT = os.path.join('static')
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
 MESSAGE_TAGS = {
     constants.DEBUG: 'alert-primary',
     constants.ERROR: 'alert-danger',
@@ -130,6 +137,14 @@ MESSAGE_TAGS = {
     constants.INFO: 'alert-info',
     constants.WARNING: 'alert-warning',
 }
+
+# Crisp config
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# Redirecting to home
+LOGIN_REDIRECT_URL = 'quotes_crud_list'
+ACCOUNT_LOGOUT_REDIRECT_URL = 'home:index'
+LOGIN_URL = 'users_hub:login'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field

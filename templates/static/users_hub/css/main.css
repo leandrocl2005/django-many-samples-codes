@@ -1,0 +1,28 @@
+.form-section {
+  display: flex;
+  justify-content: center;
+}
+
+.pt-3 {
+  padding-top: 3rem;
+}
+
+.mt-3 {
+  margin-top: 3rem;
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
+}
+
+.w-60 {
+  width: 60px;
+}
+
+.h-60 {
+  height: 60px;
+} 
+
+.rounded-full {
+  border-radius: 50%;
+}

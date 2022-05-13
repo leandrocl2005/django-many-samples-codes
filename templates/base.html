@@ -30,6 +30,22 @@
           <nav id="nav">
               <ul>
                 <li><a class="icon solid fa-home" href="{% url 'home:index' %}"><span>Home</span></a></li>
+                
+                {% if user.is_authenticated %}
+                  <li>
+                      <a class="icon solid fa-user" href="{% url 'users_hub:profile' %}">Profile</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="icon solid fa-times" href="{% url 'users_hub:logout' %}">Sair</a>
+                  </li>
+                {% else %}
+                  <li class="nav-item">
+                      <a class="icon solid fa-lock" href="{% url 'users_hub:login' %}">Login</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="icon solid fa-plus" href="{% url 'users_hub:register' %}">Register</a>
+                  </li>
+                {% endif %}
                 <!--<li>
                   <a href="#" class="icon fa-chart-bar"><span>Dropdown</span></a>
                   <ul>

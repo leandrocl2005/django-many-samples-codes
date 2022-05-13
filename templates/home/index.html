@@ -16,6 +16,7 @@
 						<header>
 							<h2>Escolha o APP e comece a <strong>Aprender DJANGO</strong>!</h2>
 						</header>
+
 						<div class="row aln-center">
 							<div class="col-4 col-6-medium col-12-small">
 
@@ -23,9 +24,9 @@
 									<section>
 										<a href="{% url 'quotes_crud_list' %}" class="image featured"><img src="{% static 'home/images/crud_banner.jpg' %}" alt="Caneta e papel por Alvaro Serrano" /></a>
 										<header>
-											<h3>CRUD, comece por aqui</h3>
+											<h3>CRUD funcional</h3>
 										</header>
-										<p>Este APP tem o intuito de explorar as operações de leitura, criação, escrita e deleção de objetos do banco de dados. Como exemplo, utilizaremos um app de frases de pensadores.</p>
+										<p>APP que estuda as operações do CRUD via Views baseadas em funções.</p>
 									</section>
 
 							</div>
@@ -33,13 +34,11 @@
 
 								<!-- Feature -->
 									<section>
-										<a href="#" class="image featured"><img src="{% static 'home/images/pic02.jpg' %}" alt="" /></a>
+										<a href="{% url 'users_hub:profile' %}" class="image featured"><img src="{% static 'home/images/users_hub_banner.jpg' %}" alt="" /></a>
 										<header>
-											<h3>Nice! What is HTML5 UP?</h3>
+											<h3>Controle de usuários</h3>
 										</header>
-										<p><a href="http://html5up.net">HTML5 UP</a> is a side project of <a href="http://twitter.com/ajlkn">AJ’s</a> (= me).
-										I started it as a way to both test my responsive tools and sharpen up my coding
-										and design skills a bit.</p>
+										<p>Registrar, logar, deslogar, redirecionar tais ações, imagem de perfil com signals!</p>
 									</section>
 
 							</div>
