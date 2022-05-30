@@ -1,0 +1,104 @@
+{% extends '../base.html' %}
+{% load static %}
+
+{% block 'title' %}<title>Auto complete</title>{% endblock %}
+
+{% block 'other_styles' %}
+<link rel="stylesheet" href="{% static 'quotescrud/css/main.css' %}" />
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/@trevoreyre/autocomplete-js/dist/style.css"
+/>
+{% endblock %}
+
+{% block 'logo' %}
+	<h1 id="logo">Auto complete</h1>
+{% endblock %}
+
+{% block 'main' %}
+
+<section id="main">
+  <div class="container">
+
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert {{message.tags}}" role="alert">
+          {{message}}
+        </div>
+      {% endfor %}
+    {% endif %}
+      <!-- Content -->
+    <div id="content" class="row">
+      <div id="autocomplete" class="autocomplete col-md-8 col-sm-12">
+        <input class="autocomplete-input"
+          placeholder="Buscar pensador"
+          aria-label="Buscar pensador"
+        >
+        <ul class="autocomplete-result-list"></ul>
+      </div>
+
+      <div class="col-md-4 col-sm-12">
+        <button id="search-button">Buscar</button>
+      </div>
+
+    </div>
+
+    <br>
+    <br>
+
+    <div class="row">
+      <!-- Content -->
+      <div id="content" class="col-12">
+        {% for quote in quotes %}
+        <article class="box post">
+          <h3>Por {{quote.thinker}}</h3>
+          <p>{{quote.text}}</p>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+
+  </div>
+</section>
+{% endblock %}
+
+{% block 'other_scripts' %}
+<script src="https://unpkg.com/@trevoreyre/autocomplete-js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>
+  var name; // global variable that keeps the name
+  new Autocomplete('#autocomplete', {
+      search: input => {
+          const url = `/autocomplete/search/?name=${input}`;
+          return new Promise(resolve => {
+              fetch(url).then(response => response.json()).then(data => {
+                  resolve(data.name);
+              })
+          })
+      },
+
+      onSubmit: result => {
+          name = result; //pass clicked result to global
+      }
+  })
+  $('#ull').click(function (e) {
+      $.ajax({
+          url: '',
+          type: 'GET',
+          data: {
+              valname: name,
+          },
+          success: function (response) {
+              window.location = response.urlLink;
+          }
+      })
+
+  });
+
+  $('#search-button').click(function (e) {
+    window.location.replace(`/autocomplete/results/?name=${name}`);
+  })
+
+
+</script>
+{% endblock %}

@@ -2158,7 +2158,7 @@ input, select, textarea {
 
 	#main {
 		position: relative;
-		overflow: hidden;
+		/* overflow: hidden; */ /* auto complete list was in main overflow */
 		background: #fff;
 		padding: 6em 0;
 	}

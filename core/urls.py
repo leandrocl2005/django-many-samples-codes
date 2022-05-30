@@ -22,7 +22,8 @@ urlpatterns = [
     path('', include('home.urls')),
     path('admin/', admin.site.urls),
     path('quotes/', include('quotescrud.urls')),
-    path('users/', include('users_hub.urls'))
+    path('users/', include('users_hub.urls')),
+    path('autocomplete/', include('autocompleteapp.urls')),
 ]
 
 if settings.DEBUG:

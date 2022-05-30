@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'quotescrud.apps.QuotescrudConfig',
     'users_hub.apps.UsersHubConfig',
+    'autocompleteapp.apps.AutocompleteappConfig',
     # third party apps
     'crispy_forms',
 ]

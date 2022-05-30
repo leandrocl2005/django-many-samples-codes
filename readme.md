@@ -67,3 +67,7 @@ Este app tem a finalidade de estudar o CRUD.
 - Criar o template *templates/quotescrud/index.html*
 - Criar o css *templates/static/quotescrud/css/main.css*
 - Linkar template com css
+
+## APP Auto Complete search
+
+Fonte: https://medium.com/@okanyenigun/autocomplete-search-suggestions-in-django-fe18981585a5
